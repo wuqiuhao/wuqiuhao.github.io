@@ -111,11 +111,11 @@
   </entry>
   
   <entry>
-    <title>WCDB理解</title>
-    <link href="http://wuqiuhao.github.io/2017/07/17/WCDB%E7%90%86%E8%A7%A3/"/>
-    <id>http://wuqiuhao.github.io/2017/07/17/WCDB理解/</id>
+    <title>WCDB学习与理解</title>
+    <link href="http://wuqiuhao.github.io/2017/07/17/WCDB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%90%86%E8%A7%A3/"/>
+    <id>http://wuqiuhao.github.io/2017/07/17/WCDB学习与理解/</id>
     <published>2017-07-17T02:47:08.000Z</published>
-    <updated>2017-07-17T15:27:20.000Z</updated>
+    <updated>2017-09-12T01:37:59.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>WCDB（WeChat DataBase）是微信官方的移动端数据库组件，它基于SQLCipher，是一个关系型数据库，支持iOS, macOS和Android。WCDB提供了三个基础类进行数据库操作：WCTDatabase、WCTTable、WCTTransaction。它们的接口都是线程安全的。WCDB几乎涵盖了常用的数据库操作，同时还开放了核心层接口，方便用户扩展一些未封装的复杂SQL操作。安全方面它继承了SQLCipher的加密方式，内建了Repair Kit用于修复损坏的数据库,通过内建宏的方式实现了<code>ORM（Object Relational Mapping)</code>，方便地实现了对象属性到数据表字段的映射,通过一种名为<code>WINQ</code>的规则对SQL进行了抽象，避免了冗长的SQL胶水代码，也防止了SQL注入。</p>
 <h2 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h2><p>WCDB使用内置的宏来连接类、属性与表、字段。共有三类宏，分别对应数据库的字段、索引和约束。所有宏都定义在WCTCodingMacro.h中。WCDB的ORM会自动识别property的类型，并映射到适合的数据库类型。其与Objective-C类型对应关系为：</p>
